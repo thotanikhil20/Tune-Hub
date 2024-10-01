@@ -1,0 +1,70 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: 50px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    font-size: 16px;
+}
+
+main {
+    margin: 50px 0;
+}
+
+/* Form styling */
+form {
+    display: inline-block; /* Center form horizontally */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit button styling */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 0; /* Space between buttons */
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.btn:active {
+    background-color: #3e8e41;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+footer {
+    margin-top: 50px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+}

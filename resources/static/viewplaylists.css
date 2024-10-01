@@ -1,0 +1,68 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: 50px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    font-size: 16px;
+}
+
+main {
+    margin: 50px 0;
+}
+
+/* Table styling */
+table {
+    width: 80%; /* Full width of the container */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse; /* Remove space between table cells */
+    background-color: white; /* White background for table */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 10px; /* Padding inside table cells */
+}
+
+th {
+    background-color: #4CAF50; /* Header background color */
+    color: white; /* Header text color */
+}
+
+td {
+    background-color: #f9f9f9; /* Row background color */
+}
+
+/* Adjusting the width of the Songs column */
+td:nth-child(2) {
+    width: 300px; /* Adjust this value to increase space */
+}
+
+/* Styling for audio elements */
+audio {
+    width: 100%; /* Full width audio player */
+}
+
+footer {
+    margin-top: 50px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+}
