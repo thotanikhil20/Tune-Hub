@@ -1,39 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Music Library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Library</title>
+    <link rel="stylesheet" href="viewsongs.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
 
-<h2>Music Library</h2>
+<header>
+    <h1>Music Library</h1>
+    <p>Your collection of songs at your fingertips</p>
+</header>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Artist</th>
-            <th>Genre</th>
-            <th>Play</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="song:${songs}">
-            <td th:text="${song.name}"></td>
-            <td th:text="${song.artist}"></td>
-            <td th:text="${song.genre}"></td>
-            <td>
-                <!-- Add audio controls for the song link -->
-                <audio controls>
-                    <source th:src="${song.link}" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </td>
-        </tr>
+<main>
+    <h2>Available Songs</h2>
 
-        <!-- Add more rows as needed -->
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Play</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="song : ${songs}">
+                <td th:text="${song.name}"></td>
+                <td th:text="${song.artist}"></td>
+                <td th:text="${song.genre}"></td>
+                <td>
+                    <!-- Add audio controls for the song link -->
+                    <audio controls>
+                        <source th:src="${song.link}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <p>&copy; 2024 Music Portal. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
