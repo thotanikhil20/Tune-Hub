@@ -1,19 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>New Playlist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Playlist</title>
+    <link rel="stylesheet" href="createplaylist.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
-<form action="addplaylist" method="post">
-<label>PLAYLIST NAME:</label>
-<input type="text" name="name">
-<br>
-<div th:each="song : ${songs}">
-<input type="checkbox" th:name="songs" th:value="${song.id}">
-<label th:text="${song.name}"></label>
-</div>
-<input type="submit" value="ADD PLAYLIST">
-</form>
+
+<header>
+    <h1>Create a New Playlist</h1>
+    <p>Select your favorite songs to add to the playlist.</p>
+</header>
+
+<main>
+    <form action="addplaylist" method="post">
+        <label for="playlistName">Playlist Name:</label>
+        <input type="text" id="playlistName" name="name" required>
+        <br><br>
+
+        <h3>Select Songs:</h3>
+        <div>
+            <div th:each="song : ${songs}">
+                <input type="checkbox" th:name="songs" th:value="${song.id}" id="song-${song.id}">
+                <label th:for="'song-' + ${song.id}" th:text="${song.name}"></label>
+                <br>
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="Add Playlist">
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2024 Music Portal. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
