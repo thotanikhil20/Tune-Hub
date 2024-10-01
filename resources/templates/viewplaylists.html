@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>playlists</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists</title>
+    <link rel="stylesheet" href="viewplaylists.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
-<h2>Existing Playlists</h2>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Songs</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="Playlist:${playlist}">
-            <td th:text="${Playlist.name}"></td>
-            <td>
-                <ul>
-                    <li th:each="song : ${Playlist.songs}">
-                        <!-- Audio control for each song -->
-                         <audio controls> <source th:src="${song.link}" type="audio/mpeg"></audio>
-                        <span th:text="${song.name}"></span>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<header>
+    <h1>Existing Playlists</h1>
+    <p>Explore your music playlists and enjoy the tunes!</p>
+</header>
+
+<main>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Songs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="Playlist : ${playlist}">
+                <td th:text="${Playlist.name}"></td>
+                <td>
+                    <ul>
+                        <li th:each="song : ${Playlist.songs}">
+                            <!-- Audio control for each song -->
+                            <audio controls>
+                                <source th:src="${song.link}" type="audio/mpeg">
+                            </audio>
+                            <span th:text="${song.name}"></span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <p>&copy; 2024 Music Portal. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
